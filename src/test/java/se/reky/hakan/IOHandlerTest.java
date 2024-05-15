@@ -13,8 +13,8 @@ public class IOHandlerTest {
      static Scanner scan;
    
      @Test
-     void methodNextIntShouldReturnTen(){
-         IOHandler ioHandler = getIoHandlerWithSetScannerData("lo");
+     void methodNextIntShouldReturnTrue(){
+         IOHandler ioHandler = getIoHandlerWithSetScannerData("10");
          boolean result = ioHandler.hasNextInt();
          assertTrue(result);
      }
