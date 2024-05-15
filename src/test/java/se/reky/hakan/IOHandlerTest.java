@@ -14,7 +14,7 @@ public class IOHandlerTest {
    
      @Test
      void methodNextIntShouldReturnTen(){
-         IOHandler ioHandler = getIoHandlerWithSetScannerData("10");
+         IOHandler ioHandler = getIoHandlerWithSetScannerData("lo");
          boolean result = ioHandler.hasNextInt();
          assertTrue(result);
      }
