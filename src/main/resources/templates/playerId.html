@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Player Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-
+<h2>Player details</h2>
+<div class="player-div">
+    <div>Player id: <span class="player-id" th:text="${player.id}">Player id</span></div>
+    <div>Player name: <span class="player-name" th:text="${player.name}">Player name</span></div>
+    <div>Player experience: <span class="player-experience" th:text="${player.experience}">Player experience</span></div>
+    <div>Player hp: <span class="player-hp" th:text="${player.hp}">Player hp</span></div>
+    <div>Player damage: <span class="player-damage" th:text="${player.damage}">Player damage</span></div>
+    <div>Player weapon: <span class="player-weapon" th:text="${player.weapon}">Player weapon</span></div>
+    <div>Player has taken the ring: <span class="player-has-silverRing" th:text="${player.silverRingObtained}">Player poses ring</span></div>
+</div>
 </body>
 </html>

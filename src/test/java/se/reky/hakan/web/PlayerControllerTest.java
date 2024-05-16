@@ -6,7 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -79,6 +82,24 @@ class PlayerControllerTest {
         String result = driver.findElement(By.tagName("button")).getText();
         assertEquals("Logga in", result);
     }
+    
+    
+    @Test
+    void playerNameShouldExistInPlayerid(){
+        driver.get(playersUrl);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        
+        List<WebElement> playerLinks = driver.findElements(By.className("player-details-link"));
+        playerLinks.get(0).click();
+        
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("player-div")));
+        boolean playerNameIsDisplayed = driver.findElement(By.className("player-name")).isDisplayed();
+        assertTrue(playerNameIsDisplayed);
+        
+        
+    }
+    
+    
     
     
     
