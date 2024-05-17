@@ -38,11 +38,11 @@ class PlayerInteractionTest {
     }
     
     
-    // TODO: 2024-05-15 finish method
+    
     private PlayerInteraction createPlayerInteractionWithScannerData(String dataForScanner) {
         Scanner scan = new Scanner(dataForScanner);
-        IOHandler ioHandler = new IOHandler(scan);
-        PlayerInteraction playerInteraction = new SimplePlayerInteraction(ioHandler);
+        IOHandler handler = new IOHandler(scan);
+        PlayerInteraction playerInteraction = new SimplePlayerInteraction(handler);
         return playerInteraction;
     }
     

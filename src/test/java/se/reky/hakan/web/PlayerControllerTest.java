@@ -16,44 +16,33 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Disabled
 class PlayerControllerTest {
-    
-    // TODO: 2024-05-15 Ändra namn på spelaer
+
 /*
 * Spela alltid två rundor!!
 * */
     
     private WebDriver driver;
-    private String playersUrl = "http://localhost:8080/players";
+    private final String playersUrl = "http://localhost:8080/players";
     
     
     @BeforeAll
-//    sätt upp webdriver manager
     public static void init(){
         WebDriverManager.chromedriver().setup();
     
     }
-    
-//    instansiera webdriver före varje test
+ 
     @BeforeEach
     void setDriver(){
         driver = new ChromeDriver();
     }
     
-//    metod som stänger WebDriver efter varje test
     @AfterEach
     public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
     }
-//
-//1) Verifiera att rätt antal players visas i listan (exempel: har du spelat två spel bör det finnas
-//            två players i listan och detta ska verifieras)
-//2) Verifiera att namnet på den första playern i listan visas på sidan (använd metoden
-//  isDisplayed() i klassen WebElement).
-//3) Testa att sidans titel överensstämmer med förväntat värde
-//4) Testa att knappen har texten = Logga in
-    
+
     @Test
     void numOfPlayersShouldBeTwo() {
         driver.get(playersUrl);
